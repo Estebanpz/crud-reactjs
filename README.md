@@ -63,13 +63,6 @@ Thanks for read this basic documentation, and too I apologize for my errors writ
 
 
 
-
-
-## Screenshots
-
-![App Screenshot](https://drive.google.com/file/d/1xVbRFwEz6etkcuD9DZkatzSRPW_AVnXx/view?usp=sharing)
-
-
 ## Author
 
 - [Github - EstebanPz](https://github.com/Estebanpz)
