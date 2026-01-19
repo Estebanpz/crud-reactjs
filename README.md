@@ -9,6 +9,8 @@ It was developed using the following technologies:
 - [React-bootstrap](https://react-bootstrap.netlify.app/docs/getting-started/introduction)
 - [sweetalert2](https://sweetalert2.github.io/)
 
+<img width="1169" height="615" alt="Image" src="https://github.com/user-attachments/assets/5e90d35a-e1ec-47be-a1c1-69a235e7d14f" />
+
 
 I'm using the **Local Storage** API to store data. This is a simple project where I wanted to try storing a list of products to perform basic operations: Create, Read, Update, and Delete. 
 
