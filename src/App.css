@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, var(--light-color) 0%, #faf5ff 100%);
+  padding: 2rem 1rem;
+}
+
+main > h1 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  text-shadow: 0 2px 4px rgba(124, 58, 237, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main > h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+}
