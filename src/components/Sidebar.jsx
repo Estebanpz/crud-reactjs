@@ -83,7 +83,7 @@ export default function Sidebar() {
                 }}
               >
                 <span className="icon">📦</span>
-                <span className="label">Productos</span>
+                <span className="label">Products</span>
               </button>
             </li>
 
@@ -96,7 +96,7 @@ export default function Sidebar() {
                 }}
               >
                 <span className="icon">📂</span>
-                <span className="label">Categorías</span>
+                <span className="label">Categories</span>
               </button>
             </li>
 
@@ -109,7 +109,7 @@ export default function Sidebar() {
                 }}
               >
                 <span className="icon">⚙️</span>
-                <span className="label">Configuración</span>
+                <span className="label">Settings</span>
               </button>
             </li>
           </ul>
@@ -121,7 +121,7 @@ export default function Sidebar() {
           </div>
           <button className="btn-logout" onClick={handleLogout}>
             <span className="icon">🚪</span>
-            <span className="label">Cerrar Sesión</span>
+            <span className="label">Sign out</span>
           </button>
         </div>
       </div>
