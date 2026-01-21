@@ -1,67 +1,35 @@
-import { useState, useEffect, useRef } from "react";
-import { Container } from "react-bootstrap";
+import { BrowserRouter, Routes, Route } from "react-router";
+import Login from "./pages/login/Login.jsx";
+import Register from "./pages/Register/Register.jsx";
+import { AuthProvider } from "./context/AuthContext.jsx";
 import "./App.css";
-import ItemForm from "./components/ItemForm";
-import ItemList from "./components/ItemList";
-import {
-  getProductsFromLocalStorage,
-  editProductInLocalStorage,
-} from "./utils/Products.js";
+import ProtectedRoute from "./routes/ProtectedRoute.jsx";
+import RootRoute from "./routes/RootRoute.jsx";
+import Dashboard from "./pages/Dashboard/Dashboard.jsx";
+import StoreProvider from "./context/StoreContext.jsx";
 function App() {
-  const [products, setProducts] = useState([]);
-  const isFirstRender = useRef(true);
-  const [editProduct, setEditProduct] = useState(null);
-  // Cargar los products desde el localStorage
-  useEffect(() => {
-    const storedproducts = localStorage.getItem("products");
-    if (storedproducts) {
-      setProducts(JSON.parse(storedproducts));
-    }
-  }, []);
-
-  useEffect(() => {
-    // Evitar que se guarde en el primer render
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
-    }
-
-    localStorage.setItem("products", JSON.stringify(products));
-  }, [products]);
-
-  const addProduct = (product) => {
-    setProducts([...products, product]);
-  };
-
-  const deleteProduct = (id) => {
-    setProducts(products.filter((product) => product.id !== id));
-  };
-
   return (
     <>
-      <main>
-        <Container className="py-5">
-          <h1 className="mb-5">📦 CRUD ReactJS</h1>
-          <div className="row">
-            <div className="col-lg-4 mb-4">
-              <ItemForm
-                addProduct={addProduct}
-                editProduct={editProduct}
-                setEditProduct={setEditProduct}
-                editProductInLocalStorage={editProductInLocalStorage}
-                setProducts={setProducts}
-              />
-            </div>
-            <div className="col-lg-8">
-              <ItemList
-                products={products}
-                deleteProduct={deleteProduct}
-                setEditProduct={setEditProduct}
-              />
-            </div>
-          </div>
-        </Container>
-      </main>
+      <AuthProvider>
+        <StoreProvider>
+          <BrowserRouter>
+            <Routes>
+              {/* Root Route - Validates user and redirects */}
+              <Route path="/" element={<RootRoute />} />
+
+              {/* Routes publics */}
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+
+              {/* Protected Routes */}
+              <Route element={<ProtectedRoute />}>
+                <Route path="/dashboard" element={<Dashboard />} />
+              </Route>
+              <Route path="*" element={<h1>404 Not Found</h1>} />
+            </Routes>
+          </BrowserRouter>
+        </StoreProvider>
+      </AuthProvider>
     </>
   );
 }
