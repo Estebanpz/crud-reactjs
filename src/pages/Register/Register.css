@@ -1,0 +1,169 @@
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--light-color) 0%, #ede9fe 100%);
+  padding: 20px;
+}
+
+.register-card {
+  background: var(--white-color);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);
+  padding: 40px;
+  width: 100%;
+  max-width: 480px;
+  border: 1px solid #e9d5ff;
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.register-header h1 {
+  color: var(--dark-color);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.register-header p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  color: var(--dark-color);
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form-control-custom {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.form-control-custom:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.form-control-custom::placeholder {
+  color: #d1d5db;
+}
+
+.password-requirements {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 6px;
+  padding: 8px;
+  background-color: #f9fafb;
+  border-radius: 6px;
+  line-height: 1.5;
+}
+
+.btn-register {
+  width: 100%;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--white-color);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-register:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+}
+
+.btn-register:active {
+  transform: translateY(0);
+}
+
+.btn-register:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.divider {
+  text-align: center;
+  margin: 25px 0;
+  color: #d1d5db;
+  font-size: 14px;
+}
+
+.login-link {
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.password-match-indicator {
+  font-size: 12px;
+  margin-top: 6px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  display: none;
+}
+
+.password-match-indicator.show {
+  display: block;
+}
+
+.password-match {
+  background-color: #d1fae5;
+  color: var(--success-color);
+}
+
+.password-mismatch {
+  background-color: #fee2e2;
+  color: var(--danger-color);
+}
+
+@media (max-width: 480px) {
+  .register-card {
+    padding: 30px 20px;
+  }
+
+  .register-header h1 {
+    font-size: 24px;
+  }
+
+  .btn-register {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+}

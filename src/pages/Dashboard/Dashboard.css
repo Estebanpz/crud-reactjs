@@ -1,0 +1,27 @@
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--light-color) 0%, #ede9fe 100%);
+}
+
+.dashboard-content {
+  flex: 1;
+  margin-left: 280px;
+  transition: margin-left 0.3s ease;
+  padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-content {
+    margin-left: 0;
+    padding: 80px 15px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-content {
+    margin-left: 0;
+    padding: 70px 10px 15px;
+  }
+}
